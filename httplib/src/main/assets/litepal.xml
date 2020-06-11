@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="download_thread" />
+
+
+    -->
+    <version value="6" />
+
+
+    <list>
+        <mapping class="com.ist.httplib.bean.ThreadBean" />
+    </list>
+
+
+
+</litepal>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/download_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y380"
+        android:text="@string/system_update"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/x25"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:visibility="gone"
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/x200"
+        android:layout_marginTop="@dimen/y30">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/x2"
+            android:src="@mipmap/ota" />
+
+        <TextView
+            android:id="@+id/download_device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x35"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/x50"
+            tools:text="IST"/>
+
+        <TextView
+            android:id="@+id/download_device_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/x25"
+            android:layout_marginTop="@dimen/x110"
+            tools:text="V1.0.0.0"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/download_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y20"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/x30"
+        tools:text="下载已暂停"/>
+
+    <LinearLayout
+        android:layout_width="@dimen/x850"
+        android:layout_height="@dimen/y60"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y60"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="@dimen/x760"
+            android:layout_height="@dimen/y40"
+            android:clickable="false"
+            android:focusable="false"
+            android:progressDrawable="@drawable/seekbar_style"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/progress_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x15"
+            android:layout_marginRight="@dimen/x10"
+            android:text="0"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/x24" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="@dimen/x850"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/download_speed_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x10"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/x24"
+            tools:text="23M/S" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/download_size_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x15"
+            android:layout_marginRight="@dimen/x75"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/x24"
+            tools:text="12m/16m" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/y50"
+        android:layout_marginTop="@dimen/y20"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/btn_puase"
+        android:layout_width="@dimen/x250"
+        android:layout_height="@dimen/y50"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_round_selector"
+        android:text="@string/pause"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x20" />
+
+        <Button
+            android:id="@+id/btn_redownload"
+            android:layout_width="@dimen/x250"
+            android:layout_height="@dimen/y50"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_round_selector"
+            android:text="@string/redownload"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/x60"
+            android:visibility="gone"
+            android:textSize="@dimen/x20" />
+    </LinearLayout>
+
+
+</LinearLayout>
