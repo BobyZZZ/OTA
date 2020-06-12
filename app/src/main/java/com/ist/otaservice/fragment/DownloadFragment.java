@@ -89,13 +89,14 @@ public class DownloadFragment extends BaseFragment<DownloadPresent> implements O
 
         Bundle bundle = getArguments();
         if (bundle != null) {
+            Log.d(TAG, "initData Constant.START_DOWNLOAD: " + bundle.getString(Constant.START_DOWNLOAD, "off"));
             if ("on".equals(bundle.getString(Constant.START_DOWNLOAD, "off"))) {
                 mPresent.startDownload();
                 mDownloadStatusTv.setText(R.string.downloading);
             } else if ("restart".equals(bundle.getString(Constant.START_DOWNLOAD, "off"))) {
                 //先暂停再重新下载
                 if (CustomerConfig.USE_DB) {
-                    HttpTaskManager.getInstance().pause();
+                    HttpTaskManager.getInstance().pause();// mPresent.pauseDownload
                     MainApplication.HANDLER.postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -143,6 +144,7 @@ public class DownloadFragment extends BaseFragment<DownloadPresent> implements O
                     }
                 }
                 break;
+            case SERVER_NOT_FOUND:
             case OTHERS:
                 mDownloadStatusTv.setText(R.string.others_error);
                 mPauseBtn.setText(R.string.try_again);
@@ -287,17 +289,18 @@ public class DownloadFragment extends BaseFragment<DownloadPresent> implements O
 
     @Override
     public boolean onPressBack() {
-        if (!mPresent.isRunning()) {
-            CusFragmentManager.getInstance().replaceFragment(MainFragment.newInstance(), CusFragmentManager.LEFT);
-            return true;
-        }
+        Log.d(TAG, "zyc-> onPressBack: " + mPresent.isRunning());
+//        if (!mPresent.isRunning()) {
+//            CusFragmentManager.getInstance().replaceFragment(MainFragment.newInstance(), CusFragmentManager.LEFT);
+//            return true;
+//        }
         new AlertDialog.Builder(mActivity)
                 .setMessage(R.string.back_download_tip)
                 .setNegativeButton(R.string.cancel_download, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        mPresent.pauseDownload();
                         if (CustomerConfig.USE_DB) {
-                            mPresent.pauseDownload();
                             MainApplication.HANDLER.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {

@@ -2,14 +2,14 @@
 <resources>
 	<string name="app_name">OtaService</string>
 	<string name="system_update">O download da atualização do sistema está em andamento …</string>
-	<string name="check_new_version">Encontrado uma nova versão %1$s. Gostariade baixar?</string>
+	<string name="check_new_version">Atualização do sistema disponível. Deseja fazer o download?</string>
 	<string name="load_back">Baixar</string>
 	<string name="cancel">Cancelar</string>
 	<string name="download_success">Odownload foi realizado comsucesso</string>
 	<string name="ota_download_success">Arquivo baixado comsucesso. Você realizou a atualização?</string>
 	<string name="update">Atualização</string>
-	<string name="net_update">Atualização em rede</string>
-	<string name="local_update">Atualização local</string>
+	<string name="net_update">Download Atualização</string>
+	<string name="local_update">Atualização via USB</string>
 	<string name="no_network">Sem rede, conecte primeiro a uma rede</string>
 	<string name="no_new_fireware">Nenhuma versão nova foi encontrada</string>
 	<string name="check">Realizando verificação, aguarde um momento...</string>
@@ -25,7 +25,7 @@
 	<string name="no_usb_here">Nenhum USB encontrado</string>
 	<string name="more_usb">Existem váriosdispositivos USB, verifiquese odispositivo possui apenas um USB</string>
 	<string name="no_updatefile_usb">Não há update.zip aqui</string>
-	<string name="local_file_can_upgrade">Arquivodetectado comsucesso. É esta atualização?</string>
+	<string name="local_file_can_upgrade">A atualização do sistema foi baixada com sucesso. Deseja instalar?</string>
 	<string name="check_your_file">O arquivo não é atualizável. Por favor, verifique o arquivo!</string>
 	<string name="server_not_found">Esta é a versão mais recente</string>
 	<string name="download_fail">Falha ao baixar, conexãodoservidor não encontrada!</string>

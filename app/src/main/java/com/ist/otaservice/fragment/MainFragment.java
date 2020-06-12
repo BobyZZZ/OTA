@@ -14,6 +14,7 @@ import com.ist.httplib.mvp.contract.OtaContract;
 import com.ist.httplib.mvp.present.MainPresent;
 import com.ist.httplib.net.NetErrorMsg;
 import com.ist.httplib.status.UsbCheckStatus;
+import com.ist.otaservice.BuildConfig;
 import com.ist.otaservice.Constant;
 import com.ist.otaservice.CustomerConfig;
 import com.ist.otaservice.MainApplication;
@@ -65,6 +66,11 @@ public class MainFragment extends BaseFragment<MainPresent> implements View.OnCl
         String version = InvokeManager.get("ro.product.version","v1.0.0");
         mTextView.setText(getString(R.string.current_vertion,version));
 
+
+        //release 版本不显示本地升级
+        if (!BuildConfig.DEBUG) {
+            view.findViewById(R.id.btn_local).setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -76,7 +82,7 @@ public class MainFragment extends BaseFragment<MainPresent> implements View.OnCl
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_net) {
-            Log.e("Keven", "error: Constant.SAVE_PATH =="+ Constant.SAVE_PATH);
+            Log.e(TAG, "Constant.SAVE_PATH =="+ Constant.SAVE_PATH);
             if (IstUtil.isNetworkPositive()) {
                 showProgressDialog(R.string.check);
                 MainApplication.HANDLER.postDelayed(new Runnable() {
@@ -219,7 +225,7 @@ public class MainFragment extends BaseFragment<MainPresent> implements View.OnCl
         if (isCanUpdate) {
            // String version = InvokeManager.get("ro.product.version","V1.0.0.0");
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-            builder.setMessage(getString(R.string.check_new_version,""))
+            builder.setMessage(getString(R.string.check_new_version))
                     .setNegativeButton(R.string.load_back,  new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {

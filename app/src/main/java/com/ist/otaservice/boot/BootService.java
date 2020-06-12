@@ -159,7 +159,7 @@ public class BootService extends Service {
                 if (isCanUpdate) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                     builder.setCancelable(false)
-                            .setMessage(getString(R.string.check_new_version,""))
+                            .setMessage(getString(R.string.check_new_version))
                             .setPositiveButton(R.string.load_back, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

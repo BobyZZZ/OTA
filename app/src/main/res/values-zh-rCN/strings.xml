@@ -2,14 +2,14 @@
     <string name="app_name">OtaService</string>
     <integer name="anim_time">200</integer>
     <string name="system_update">系统更新下载正在进行中…</string>
-    <string name="check_new_version">检测到新版本 %1$s，是否下载?</string>
+    <string name="check_new_version">系统更新可用。 您要下载吗？</string>
     <string name="load_back">下载</string>
     <string name="cancel">取消</string>
     <string name="download_success">下载成功</string>
     <string name="ota_download_success">新版本下载完成，是否更新?</string>
     <string name="update">更新</string>
-    <string name="net_update">网络更新</string>
-    <string name="local_update">本地升级</string>
+    <string name="net_update">下载升级</string>
+    <string name="local_update">通过USB升级</string>
     <string name="no_network">没有网络，请先联网</string>
     <string name="no_new_fireware">没有发现新版本</string>
     <string name="check">正在检查，请稍等....</string>
@@ -25,7 +25,7 @@
     <string name="no_usb_here">没有找到USB设备</string>
     <string name="more_usb">有多个USB设备，请保证设备只有一个USB</string>
     <string name="no_updatefile_usb">没有找到update.zip文件</string>
-    <string name="local_file_can_upgrade">文件检测成功，是否升级?</string>
+    <string name="local_file_can_upgrade">系统更新已成功下载。 您要安装吗？</string>
     <string name="check_your_file">文件不可升级，请检查文件！</string>
     <string name="server_not_found">已经是最新版本</string>
     <string name="download_fail">下载失败，未找到服务器连接!</string>

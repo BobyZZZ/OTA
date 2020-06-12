@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- 背景 -->
-    <item android:id="@android:id/background">
-        <shape>
-            <corners android:radius="@dimen/x100" />
-            <gradient
-                android:angle="45"
-                android:centerY="0.75"
-
-                android:startColor="#000"
-                android:endColor="#fff"/>
-
-        </shape>
-    </item>
-
     <item android:id="@android:id/progress">
         <clip>
             <shape>
                 <corners android:radius="@dimen/x100" />
                 <gradient
-                    android:startColor="@color/deep_grap"
-                    android:endColor="@color/deep_grap" />
+                    android:angle="45"
+                    android:centerY="0.75"
+
+                    android:endColor="#fff"
+                    android:startColor="#000" />
+
             </shape>
         </clip>
     </item>
+
+<!--    <item android:id="@android:id/background">-->
+<!--        <shape>-->
+<!--            <corners android:radius="@dimen/x100" />-->
+<!--            <gradient-->
+<!--                android:endColor="@android:color/transparent"-->
+<!--                android:startColor="@android:color/transparent" />-->
+<!--        </shape>-->
+<!--    </item>-->
 
 </layer-list>

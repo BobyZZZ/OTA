@@ -2,14 +2,14 @@
 <resources>
 	<string name="app_name">OtaService</string>
 	<string name="system_update">Systeemupdate wordt gedownload …</string>
-	<string name="check_new_version">Zoek een nieuwe versie %1$s. Downloaden?</string>
+	<string name="check_new_version">Systeemupdate beschikbaar. Wilt u downloaden?</string>
 	<string name="load_back">Download</string>
 	<string name="cancel">Annuleren</string>
 	<string name="download_success">Download gelukt</string>
 	<string name="ota_download_success">Bestand metsucces gedownload. Heeft u een upgrade gedaan?</string>
 	<string name="update">Upgraden</string>
-	<string name="net_update">Netwerk-upgrade</string>
-	<string name="local_update">locale upgrade</string>
+	<string name="net_update">Upgrade downloaden</string>
+	<string name="local_update">Upgrade via USB</string>
 	<string name="no_network">Geen netwerk, eerst netwerk</string>
 	<string name="no_new_fireware">Geen nieuwe versie gevonden</string>
 	<string name="check">Inchecken, wacht even...</string>
@@ -25,7 +25,7 @@
 	<string name="no_usb_here">Geen usb gevonden</string>
 	<string name="more_usb">Er zijn meerdere USB-apparaten, zorg ervoordat het apparaatslechts één USB heeft.</string>
 	<string name="no_updatefile_usb">Geen update.zip hier</string>
-	<string name="local_file_can_upgrade">Bestand metsucces gevonden. Is het geüpgraded?</string>
+	<string name="local_file_can_upgrade">Aktualizacja systemu została pomyślnie pobrana. Czy chcesz zainstalować?</string>
 	<string name="check_your_file">Het bestand is te upgraden Controleer het bestand!</string>
 	<string name="server_not_found">Dit isde recentste versie</string>
 	<string name="download_fail">Download mislukt,serverconnectie niet gevonden!</string>

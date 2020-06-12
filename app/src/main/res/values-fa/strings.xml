@@ -3,14 +3,14 @@
 	<string name="app_name">OtaService</string>
 	<integer name="anim_time">200</integer>
 	<string name="system_update">ارتقا سیستم</string>
-	<string name="check_new_version">%1$s یک نسخه جدید را پیدا کنید آن را دانلود کنید؟</string>
+	<string name="check_new_version">بروزرسانی سیستم در دسترس است. آیا می خواهید بارگیری کنید؟</string>
 	<string name="load_back">دانلود</string>
 	<string name="cancel">لغو</string>
 	<string name="download_success">موفقیت را دانلود کنید</string>
 	<string name="ota_download_success">فایل با موفقیت دانلود شد ارتقا دادی؟</string>
 	<string name="update">ارتقاء</string>
-	<string name="net_update">بروز رسانی از طریق شبکه</string>
-	<string name="local_update">USBبروز رسانی از طریق</string>
+	<string name="net_update">ارتقا را بارگیری کنید</string>
+	<string name="local_update">از طریق USB ارتقا دهید</string>
 	<string name="no_network">بدون شبکه، لطفا شبکه اول</string>
 	<string name="no_new_fireware">هیچ نسخه جدید یافت نشد</string>
 	<string name="check">در حال بررسی، لطفا یک لحظه صبر کنید ....</string>
@@ -26,7 +26,7 @@
 	<string name="no_usb_here">بدون USB یافت نشد</string>
 	<string name="more_usb">چندین دستگاه USB وجود دارد، لطفا مطمئن شوید که دستگاه فقط یک USB دارد</string>
 	<string name="no_updatefile_usb">بدون update.zip اینجا نیست</string>
-	<string name="local_file_can_upgrade">پرونده با موفقیت شناسایی شد آیا ارتقاء یافته است؟</string>
+	<string name="local_file_can_upgrade">آپدیت سیستم با موفقیت بارگیری شد. آیا می خواهید نصب کنید؟</string>
 	<string name="check_your_file">فایل قابل ارتقا نیست لطفا فایل را بررسی کنید</string>
 	<string name="server_not_found">این آخرین نسخه - شخصیت های چینی سنتی</string>
 	<string name="download_fail">دانلود نشد، اتصال به سرور یافت نشد!</string>

@@ -2,14 +2,14 @@
     <string name="app_name">OtaService</string>
     <integer name="anim_time">200</integer>
     <string name="system_update">System update download in progress …</string>
-    <string name="check_new_version">Find a new version %1$s. Download it?</string>
+    <string name="check_new_version">System update available. Would you like to download?</string>
     <string name="load_back">Download</string>
     <string name="cancel">Cancel</string>
     <string name="download_success">Download success</string>
     <string name="ota_download_success">File downloaded successfully. Did you upgrade?</string>
     <string name="update">Upgrade</string>
-    <string name="net_update">Network upgrade</string>
-    <string name="local_update">local upgrade</string>
+    <string name="net_update">Download Upgrade</string>
+    <string name="local_update">Upgrade via USB</string>
     <string name="no_network">No network, please network first</string>
     <string name="no_new_fireware">No new version was found</string>
     <string name="check">Checking in, please wait a moment....</string>
@@ -25,7 +25,7 @@
     <string name="no_usb_here">No usb found</string>
     <string name="more_usb">There are multiple USB devices, please make sure the device only has one USB</string>
     <string name="no_updatefile_usb">No update.zip here</string>
-    <string name="local_file_can_upgrade">File detected successfully. Is it upgraded?</string>
+    <string name="local_file_can_upgrade">System update was downloaded successfully. Would you like to install?</string>
     <string name="check_your_file">The file is not upgradable. Please check the file ！</string>
     <string name="server_not_found">This is the latest version</string>
     <string name="download_fail">Download failed, server connection not found!</string>

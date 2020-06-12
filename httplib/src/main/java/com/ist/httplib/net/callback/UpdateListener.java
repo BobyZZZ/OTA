@@ -9,8 +9,8 @@ import com.ist.httplib.net.NetErrorMsg;
  * Time on 2018/9/12
  */
 
-public interface UpdateListener {
-    void checkUpdate(boolean isCanUpdate, BaseOtaRespone respone);
+public interface UpdateListener<T> {
+    void checkUpdate(boolean isCanUpdate, BaseOtaRespone<T> respone);
     void complete(String fileName);
     void doProgress(int progress, long currentSize, long totalSize);
     void error(NetErrorMsg status, String errorMsg);

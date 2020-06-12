@@ -2,14 +2,14 @@
 <resources>
 	<string name="app_name">OtaService</string>
 	<string name="system_update">Le téléchargement de la mise à jour du système est en cours …</string>
-	<string name="check_new_version">Rechercher une nouvelle version. Voulez-vous télécharger ?</string>
+	<string name="check_new_version">Mise à jour du système disponible. Souhaitez-vous télécharger?</string>
 	<string name="load_back">Télécharger</string>
 	<string name="cancel">Annuler</string>
 	<string name="download_success">Téléchargement réussi</string>
 	<string name="ota_download_success">Téléchargementdu fichier réussi. Avez-vous effectué la mise à jour ?</string>
 	<string name="update">Mise à jour</string>
-	<string name="net_update">Mise à jour réseau</string>
-	<string name="local_update">Mise à jour locale</string>
+	<string name="net_update">Télécharger la mise à niveau</string>
+	<string name="local_update">Mise à niveau via USB</string>
 	<string name="no_network">Aucun réseau. Veuillezd\'abord vous connecter au réseau</string>
 	<string name="no_new_fireware">Aucune nouvelle version trouvée</string>
 	<string name="check">Vérification en cours, veuillez patienter…</string>
@@ -25,7 +25,7 @@
 	<string name="no_usb_here">Aucun USB trouvé</string>
 	<string name="more_usb">Il existe plusieurs périphériques USB, assurez-vous que votre périphériquedisposed\'unseul port USB.</string>
 	<string name="no_updatefile_usb">Aucun fichier update.zip trouvé</string>
-	<string name="local_file_can_upgrade">Fichier trouvé. Avez-vous effectué la mise à jour ?</string>
+	<string name="local_file_can_upgrade">La mise à jour du système a été téléchargée avec succès. Souhaitez-vous installer?</string>
 	<string name="check_your_file">Le fichier ne peut pas être mis à jour. Veuillez vérifier le fichier !</string>
 	<string name="server_not_found">Ceci est ladernière version</string>
 	<string name="download_fail">Échecdu téléchargement,serveur introuvable !</string>

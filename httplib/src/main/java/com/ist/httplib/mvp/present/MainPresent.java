@@ -34,22 +34,8 @@ public class MainPresent extends BasePresent<OtaContract.IMainView> {
     }
 
     public void checkNetUpdate(){
-        Log.e("Keven", "checkNetUpdate: *****");
-        HttpTaskManager.getInstance().checkUpdate(new UpdateListenerAdapter() {
-            @Override
-            public void checkUpdate(boolean isCanUpdate, BaseOtaRespone respone) {
-                super.checkUpdate(isCanUpdate, respone);
-                mIView.checkNetUpdate(isCanUpdate,respone);
-            }
-
-            @Override
-            public void error(NetErrorMsg status, String errorMsg) {
-                super.error(status, errorMsg);
-                Log.e("Keven", "error: errorMsg =="+errorMsg );
-                mIView.error(status,errorMsg);
-            }
-        });
-
-
+        mMainModel.checkNetUpdate();
     }
+
+
 }

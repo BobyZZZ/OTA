@@ -1,6 +1,7 @@
 package com.ist.httplib.net.callback;
 
 import com.ist.httplib.bean.BaseOtaRespone;
+import com.ist.httplib.bean.customer.AppVersion;
 import com.ist.httplib.net.NetErrorMsg;
 
 /**
@@ -8,9 +9,9 @@ import com.ist.httplib.net.NetErrorMsg;
  * Time on 2018/9/26
  */
 
-public abstract class UpdateListenerAdapter implements UpdateListener{
+public abstract class UpdateListenerAdapter implements UpdateListener<AppVersion>{
     @Override
-    public void checkUpdate(boolean isCanUpdate, BaseOtaRespone respone) {
+    public void checkUpdate(boolean isCanUpdate, BaseOtaRespone<AppVersion> respone) {
 
     }
 

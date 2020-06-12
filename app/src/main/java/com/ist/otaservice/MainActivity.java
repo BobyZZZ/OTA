@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements BackHandleInterfa
         if (IstUtil.isNetworkPositive()) {
             if (CustomerConfig.USE_DB) {
                 boolean istExsit = LitepalManager.getInstance().isDbExsits();
-                Log.d(TAG, "initData isDbExsits: " + istExsit);
+                Log.d(TAG, "zyc-> initData isDbExsits: " + istExsit);
                 if (istExsit) {
                     CusFragmentManager.getInstance().replaceFragment(DownloadFragment.newInstance("restart"), CusFragmentManager.RIGHT);
                 }

@@ -58,7 +58,7 @@ public class CustomConverManager {
                     public void onResponse(BaseOtaRespone<AppVersion> otaRespone) {
                         AppVersion appVersion = otaRespone.appVersion;
                         Log.e("Keven", "onResponse: otaRespone.appVersion.fullPath =="+otaRespone.appVersion.fullPath);
-                        OtaLibConfig.getBuilder().setFileDownloadUrl(BuildConfig.DEBUG ? otaRespone.appVersion.fullPath : URL_DOWNLOAD+otaRespone.appVersion.fullPath);
+//                        OtaLibConfig.getBuilder().setFileDownloadUrl(BuildConfig.DEBUG ? otaRespone.appVersion.fullPath : URL_DOWNLOAD+otaRespone.appVersion.fullPath);
                         Log.e("Keven", "onResponse: otaRespone.statusCode =="+otaRespone.statusCode);
                         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddhhmm");
                         String buildDate =appVersion.buildDate.substring(0,12);
