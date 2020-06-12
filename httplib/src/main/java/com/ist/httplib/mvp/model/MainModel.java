@@ -46,6 +46,7 @@ public class MainModel {
     private void checkLocalFileExsits() {
         final File file = new File(mBuilder.getFilePath(), mBuilder.getFileName());
         boolean isRemindMe = (boolean) SprefUtils.getSprefValue(SprefUtils.KEY_REMIND_ME, SprefUtils.SprefType.BOOLEAN);
+        Log.d(TAG, "checkLocalFileExsits file.exists(): " + file.exists() + "---isRemindMe: " + isRemindMe);
         mIView.isLocalHasFile(file.exists() && isRemindMe, file);
     }
 

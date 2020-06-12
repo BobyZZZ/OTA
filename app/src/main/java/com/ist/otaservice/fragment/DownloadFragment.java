@@ -301,12 +301,15 @@ public class DownloadFragment extends BaseFragment<DownloadPresent> implements O
                     public void onClick(DialogInterface dialog, int which) {
                         mPresent.pauseDownload();
                         if (CustomerConfig.USE_DB) {
-                            MainApplication.HANDLER.postDelayed(new Runnable() {
+/*                            MainApplication.HANDLER.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
                                     RxUtils.deleteDbFile();
                                 }
-                            }, 500);
+                            }, 500);*/
+                            Log.d(TAG, "onPressBack currentThread: " + Thread.currentThread().getName());
+                            //直接在当前线程删除文件，防止这里先调用删除文件，回到MainFragment仍然能检测到文件问题
+                            RxUtils.deleteDbFileInCurrentThread();
                         }
                         CusFragmentManager.getInstance().replaceFragment(MainFragment.newInstance(), CusFragmentManager.LEFT);
                     }

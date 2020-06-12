@@ -2,6 +2,7 @@ package com.ist.httplib.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
+import android.util.Log;
 
 import com.ist.httplib.LitepalManager;
 import com.ist.httplib.OtaLibConfig;
@@ -26,8 +27,8 @@ public class RxUtils {
      * @param <T>
      * @return
      */
-    public static <T> ObservableTransformer<T,T> rxScheduers(){
-        return new ObservableTransformer<T,T>(){
+    public static <T> ObservableTransformer<T, T> rxScheduers() {
+        return new ObservableTransformer<T, T>() {
 
             @Override
             public ObservableSource<T> apply(Observable<T> upstream) {
@@ -39,33 +40,44 @@ public class RxUtils {
 
     /**
      * 判断是否有网络
+     *
      * @return
      */
     public static boolean isNetworkPositive() {
         ConnectivityManager connectivityManager = (ConnectivityManager) OtaLibConfig.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         boolean isWIFIC = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnected();
         boolean isETHERNETC = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_ETHERNET).isConnected();
-        if (isWIFIC || isETHERNETC){
+        if (isWIFIC || isETHERNETC) {
             return true;
         }
         return false;
     }
 
-    public static void deleteDbFile(){
+    public static void deleteDbFile() {
         Observable.just("1")
                 .compose(RxUtils.<String>rxScheduers())
-                .subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        if (OtaLibConfig.getBuilder().isUsbDb()) {
-                            LitepalManager.getInstance().deleteall();
-                        }
-                        File file = new File(OtaLibConfig.getBuilder().getFilePath(),
-                                OtaLibConfig.getBuilder().getFileName());
-                        if (file.exists()){
-                            file.delete();
-                        }
-                    }
-                });
+                .subscribe(deleteDbAndFileObserver);
     }
+
+    public static void deleteDbFileInCurrentThread() {
+        Observable.just("2")
+                .subscribe(deleteDbAndFileObserver);
+    }
+
+    static Consumer deleteDbAndFileObserver = new Consumer<String>() {
+        @Override
+        public void accept(String s) throws Exception {
+            if (OtaLibConfig.getBuilder().isUsbDb()) {
+                LitepalManager.getInstance().deleteall();
+            }
+            File file = new File(OtaLibConfig.getBuilder().getFilePath(),
+                    OtaLibConfig.getBuilder().getFileName());
+            Log.d("zyc", "deleteDbFile" + s + " isUsbDb: " + OtaLibConfig.getBuilder().isUsbDb() + "---filePath:" +
+                    file.getPath() + "---file.exists: " + file.exists() + "---CurrentThread: " + Thread.currentThread().getName());
+            if (file.exists()) {
+                file.delete();
+            }
+        }
+    };
+
 }
