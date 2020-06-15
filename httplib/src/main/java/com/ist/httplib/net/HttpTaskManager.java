@@ -120,7 +120,7 @@ public class HttpTaskManager {
                         bean.listener = mUpdateListener;
                         bean.fileLength = responseBody.contentLength();
                         //内部存储至少要大于ota包
-                        Log.d(TAG, "Keven --> accept: "+ Formatter.formatFileSize(mBuilder.getContext(),bean.fileLength)+
+                        Log.d(TAG, "Keven --> accept bean.fileLength: " + bean.fileLength + ",formatSize: "+ Formatter.formatFileSize(mBuilder.getContext(),bean.fileLength)+
                                 "  "+ Formatter.formatFileSize(mBuilder.getContext(),getAvailDiskSize(mBuilder.getFilePath())));
                         if (!LitepalManager.getInstance().isDbExsits()) {
                             if (getAvailDiskSize(mBuilder.getFilePath()) > bean.fileLength) {

@@ -126,6 +126,7 @@ public class OtaUtil {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if (nateid == R.string.delete){
+                    SprefUtils.saveSprefValue(SprefUtils.KEY_REMIND_ME,false);
                     file.delete();
                     Toast.makeText(context, context.getString(R.string.delete_success), Toast.LENGTH_SHORT).show();
                 }

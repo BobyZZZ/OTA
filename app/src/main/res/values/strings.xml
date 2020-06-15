@@ -53,4 +53,5 @@
     <string name="apk_version">apk version:v1.1.4</string>
     <string name="anim_time">200.0</string>
 
+    <string name="verification_failed">Verification failed,system key does not match</string>
 </resources>

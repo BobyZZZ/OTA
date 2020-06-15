@@ -18,6 +18,7 @@ import com.ist.httplib.mvp.present.DownloadPresent;
 import com.ist.httplib.net.HttpTaskManager;
 import com.ist.httplib.net.NetErrorMsg;
 import com.ist.httplib.utils.RxUtils;
+import com.ist.httplib.utils.SprefUtils;
 import com.ist.otaservice.Constant;
 import com.ist.otaservice.CustomerConfig;
 import com.ist.otaservice.MainApplication;
@@ -218,11 +219,12 @@ public class DownloadFragment extends BaseFragment<DownloadPresent> implements O
                         MainApplication.HANDLER.postDelayed(new Runnable() {
                             @Override
                             public void run() {
+                                mDownloadStatusTv.setText(getString(R.string.verification_failed));
                                 dismissProgressDialog();
-                                Toast.makeText(mContext, getString(R.string.check_your_file), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, getString(R.string.verification_failed), Toast.LENGTH_SHORT).show();
                             }
                         }, 500);
-
+                        Log.d(TAG, "zyc-> fail currentThread: " + Thread.currentThread().getName());
                     }
                 });
             } else {
@@ -289,11 +291,12 @@ public class DownloadFragment extends BaseFragment<DownloadPresent> implements O
 
     @Override
     public boolean onPressBack() {
-        Log.d(TAG, "zyc-> onPressBack: " + mPresent.isRunning());
-//        if (!mPresent.isRunning()) {
-//            CusFragmentManager.getInstance().replaceFragment(MainFragment.newInstance(), CusFragmentManager.LEFT);
-//            return true;
-//        }
+        boolean remindMe = (boolean) SprefUtils.getSprefValue(SprefUtils.KEY_REMIND_ME, SprefUtils.SprefType.BOOLEAN);
+        if (remindMe) {
+            //校验成功，弹出过对话框并选择了remindMe，则直接返回，不执行下边的删除操作
+            CusFragmentManager.getInstance().replaceFragment(MainFragment.newInstance(), CusFragmentManager.LEFT);
+            return true;
+        }
         new AlertDialog.Builder(mActivity)
                 .setMessage(R.string.back_download_tip)
                 .setNegativeButton(R.string.cancel_download, new DialogInterface.OnClickListener() {
