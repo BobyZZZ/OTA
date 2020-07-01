@@ -24,22 +24,26 @@ public class LitepalManager {
     private LitepalManager() {
     }
 
-    public void saveOrUpdate(ThreadBean bean){
-        bean.saveOrUpdate("theadId = ?",bean.theadId+"");
+    public void saveOrUpdate(ThreadBean bean) {
+        bean.saveOrUpdate("theadId = ?", bean.theadId + "");
     }
 
-    public List<ThreadBean> getAllThreadBean(){
-        return LitePal.findAll(ThreadBean.class,true);
+    public List<ThreadBean> getAllThreadBean() {
+        return LitePal.findAll(ThreadBean.class, true);
     }
 
-    public void deleteall(){
+    public void deleteall() {
         List<ThreadBean> list = getAllThreadBean();
         for (ThreadBean threadBean : list) {
             threadBean.delete();
         }
     }
 
-    public boolean isDbExsits(){
+    public boolean isDbExsits() {
         return LitePal.isExist(ThreadBean.class);
+    }
+
+    public void deleteDatabase() {
+        LitePal.deleteDatabase("download_thread");
     }
 }

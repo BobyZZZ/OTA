@@ -160,6 +160,10 @@ public class DownloadModel implements UpdateListener {
 
     @Override
     public void error(final NetErrorMsg status,final String errorMsg) {
+        if (status == NetErrorMsg.DATABASE_FIELD_NOT_MATCH) {
+            Log.d(TAG, "zyc-> 数据库字段不匹配！删除数据库文件 ");
+            LitepalManager.getInstance().deleteDatabase();
+        }
         mBuilder.getHandler().post(new Runnable() {
             @Override
             public void run() {

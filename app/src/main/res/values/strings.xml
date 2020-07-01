@@ -54,4 +54,5 @@
     <string name="anim_time">200.0</string>
 
     <string name="verification_failed">Verification failed,system key does not match</string>
+    <string name="db_field_not_match">Database information is wrong, please try again</string>
 </resources>

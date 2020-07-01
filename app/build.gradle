@@ -6,29 +6,29 @@ android {
         applicationId "com.ist.otaservice"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     android.applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "IstOta_i3.apk"
+            outputFileName = "IstOta_i3_v${defaultConfig.versionName}.apk"
         }
     }
 
     signingConfigs {
         release {
-            storeFile file("./848-android.jks")
-            storePassword "848-android"
-            keyAlias "848-android"
-            keyPassword "848-android"
+            storeFile file("./i3touch.jks")
+            storePassword "i3touch"
+            keyAlias "i3touch"
+            keyPassword "i3touch"
         }
         debug {
-            storeFile file("./848-android.jks")
-            storePassword "848-android"
-            keyAlias "848-android"
-            keyPassword "848-android"
+            storeFile file("./i3touch.jks")
+            storePassword "i3touch"
+            keyAlias "i3touch"
+            keyPassword "i3touch"
         }
     }
 

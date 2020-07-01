@@ -13,5 +13,6 @@ public enum  NetErrorMsg {
     ID_NOT_SAME,
     FILE_LENGTH_NOT_SAME,
     RULES_NOT_SAME,
-    OTHERS
+    OTHERS,
+    DATABASE_FIELD_NOT_MATCH
 }

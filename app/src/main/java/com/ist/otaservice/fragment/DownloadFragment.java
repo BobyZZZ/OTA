@@ -150,6 +150,10 @@ public class DownloadFragment extends BaseFragment<DownloadPresent> implements O
                 mDownloadStatusTv.setText(R.string.others_error);
                 mPauseBtn.setText(R.string.try_again);
                 break;
+            case DATABASE_FIELD_NOT_MATCH:
+                mDownloadStatusTv.setText(R.string.db_field_not_match);
+                mPauseBtn.setText(R.string.try_again);
+                break;
             default:
                 break;
 

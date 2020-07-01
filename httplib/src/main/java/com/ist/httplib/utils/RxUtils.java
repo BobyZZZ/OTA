@@ -72,11 +72,12 @@ public class RxUtils {
             }
             File file = new File(OtaLibConfig.getBuilder().getFilePath(),
                     OtaLibConfig.getBuilder().getFileName());
-            Log.d("zyc", "deleteDbFile" + s + " isUsbDb: " + OtaLibConfig.getBuilder().isUsbDb() + "---filePath:" +
+            Log.d("zyc", "deleteDbFile " + s + " isUsbDb: " + OtaLibConfig.getBuilder().isUsbDb() + "---filePath:" +
                     file.getPath() + "---file.exists: " + file.exists() + "---CurrentThread: " + Thread.currentThread().getName());
             if (file.exists()) {
                 file.delete();
             }
+            SprefUtils.saveSprefValue(SprefUtils.KEY_REMIND_ME,false);
         }
     };
 

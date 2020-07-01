@@ -136,7 +136,11 @@ public class HttpTaskManager {
 
                     @Override
                     public void onError(Throwable e) {
-                        mUpdateListener.error(NetErrorMsg.SERVER_NOT_FOUND,e.toString());
+                        if (e.toString().contains("LitePalSupportException")) {
+                            mUpdateListener.error(NetErrorMsg.DATABASE_FIELD_NOT_MATCH, e.getMessage());
+                        } else {
+                            mUpdateListener.error(NetErrorMsg.SERVER_NOT_FOUND,e.getMessage());
+                        }
                     }
 
                     @Override
