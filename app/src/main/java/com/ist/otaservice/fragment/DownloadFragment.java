@@ -172,8 +172,8 @@ public class DownloadFragment extends BaseFragment<DownloadPresent> implements O
 
     @Override
     public void updateOtherInfo(long currentSize, long totalSize) {
-        Log.d(TAG, "zsr --> updateProgress: " + Formatter.formatFileSize(mContext, (currentSize - mLastLength)));
-        if (isAdded()) {
+        Log.d(TAG, "zsr --> updateProgress: " + Formatter.formatFileSize(mContext, (currentSize - mLastLength)) + "---mPresent.isRunning(): " + mPresent.isRunning());
+        if (isAdded() && mPresent.isRunning()) {
             long size = (currentSize - mLastLength);
             String speed = Formatter.formatFileSize(mContext, size) + "/s";
             String current = Formatter.formatFileSize(mContext, (currentSize));

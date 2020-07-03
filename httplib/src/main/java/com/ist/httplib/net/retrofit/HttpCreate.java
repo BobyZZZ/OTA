@@ -3,6 +3,7 @@ package com.ist.httplib.net.retrofit;
 
 
 
+import android.util.Log;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -18,13 +19,14 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class HttpCreate {
 
-    private static final int TIME_OUT = 20;
+    private static final int TIME_OUT = 300;
 
     /**
      * 获取retrofit服务
      * @return
      */
     public static HttpServer getService(){
+        Log.d("TIME_OUT", "getService TIME_OUT: " + TIME_OUT);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.baidu.com/")
                 //转字符串
@@ -45,6 +47,7 @@ public class HttpCreate {
      */
     private static class OkHttpHolder{
          static OkHttpClient BUILDER = new OkHttpClient.Builder()
+                 .retryOnConnectionFailure(true)
                  .readTimeout(TIME_OUT, TimeUnit.SECONDS)
                  .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                  .writeTimeout(TIME_OUT+TIME_OUT,TimeUnit.SECONDS)

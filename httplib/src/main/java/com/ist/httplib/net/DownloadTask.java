@@ -58,6 +58,7 @@ public class DownloadTask {
     }
 
     public void startDownload(DownloadBean downloadBean){
+        isRunning = true;
         mDownloadBean = downloadBean;
         mListener = downloadBean.listener;
         mDownloadTasks.clear();
