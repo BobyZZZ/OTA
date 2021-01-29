@@ -57,7 +57,7 @@ public abstract class CommonSubscribe<T extends BaseOtaRespone> extends Resource
             mView.checkUpdate(false,deviceBean);
         }*/
         if (t.appVersion == null) {
-            Log.d(TAG, "zyc -> onNext t.appVersion: " + t.appVersion);
+            Log.d(TAG, "zyc -> onNext t.appVersion: " + t);
             if (mView != null) {
                 mView.error(NetErrorMsg.OTHERS,"t.appVersion is null");
             }

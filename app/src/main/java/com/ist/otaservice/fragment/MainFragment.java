@@ -112,7 +112,7 @@ public class MainFragment extends BaseFragment<MainPresent> implements View.OnCl
         switch(status){
             case SERVER_NOT_FOUND:
                 Log.e("Keven", "error: SERVER_NOT_FOUND");
-                Toast.makeText(mContext,R.string.server_not_found, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext,R.string.others_error, Toast.LENGTH_SHORT).show();
                  break;
             case ID_NOT_SAME:
                 Log.e("Keven", "error: ID_NOT_SAME");
@@ -124,7 +124,7 @@ public class MainFragment extends BaseFragment<MainPresent> implements View.OnCl
                 break;
             case OTHERS:
                 Log.e("Keven", "error: OTHERS");
-                Toast.makeText(mContext,R.string.others_error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext,R.string.server_not_found, Toast.LENGTH_SHORT).show();
                 break;
             default :
                 Log.e("zyc", "error: OTHERS 2");

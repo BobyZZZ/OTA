@@ -27,7 +27,7 @@
     <string name="no_updatefile_usb">No update.zip here</string>
     <string name="local_file_can_upgrade">System update was downloaded successfully. Would you like to install?</string>
     <string name="check_your_file">The file is not upgradable. Please check the file ！</string>
-    <string name="server_not_found">This is the latest version</string>
+    <string name="server_not_found">No firmware update available. This device is up to date</string>
     <string name="download_fail">Download failed, server connection not found!</string>
     <string name="notice">Prompt</string>
     <string name="comfire">Comfire</string>

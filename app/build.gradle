@@ -6,8 +6,8 @@ android {
         applicationId "com.ist.otaservice"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -49,7 +49,8 @@ android {
         debug {
             signingConfig signingConfigs.debug
 
-            buildConfigField "String", "URL_FOR_CHECK_UPDATABLE", "\"http://192.168.0.250:8080/download/i3/TEST/update.json\""
+//            buildConfigField "String", "URL_FOR_CHECK_UPDATABLE", "\"http://192.168.0.250:8080/download/i3/TEST/update.json\""
+            buildConfigField "String", "URL_FOR_CHECK_UPDATABLE", "\"http://www.isolution-cloud.com:8234/download/update.json?name=i3&model=default&state=release\""
         }
     }
 }
